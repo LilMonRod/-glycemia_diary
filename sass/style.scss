@@ -1,0 +1,10 @@
+/****************
+      Helpers
+*****************/
+.clearfix::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+  
+@import 'form.scss';
