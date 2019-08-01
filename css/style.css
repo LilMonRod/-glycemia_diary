@@ -22,4 +22,7 @@ button {
   border-radius: 6px;
   border: 2px solid #1883ba; }
 
+.none {
+  visibility: hidden; }
+
 /*# sourceMappingURL=style.css.map */

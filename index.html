@@ -8,14 +8,15 @@
 </head>
 
 <body>
+
     <section class="init">
         <!--
             logo
         -->
         
     </section>
-    <section class="sign-in">
-        <form action="">
+    <section id="registration" class="sign-in">
+        <form id="userForm" action="">
             <label for="name">Nombre:</label>
             <input id="name" type="text">
 
@@ -34,13 +35,13 @@
             <input id="btn__log" type="submit" value="Guardar">
         </form>
     </section>
-    <section>
+    <section id="magageGlicemya">
         <button class="add-new">Agregar nueva glicemia</button>
 
-        <form action="" aria-expanded="false" id="newform-container">
+        <form id="newMedition" action="" aria-expanded="false" id="newform-container">
             <h2>Nuevo registro glicemia</h2>
             <label for="glycemi">Ultima medición:</label>
-            <input id="glycemi" type="text"><span id="units"></span>
+            <input id="glycemi" type="number"><span id="units"></span>
 
             <label for="commits">Observaciones:</label>
             <textarea id="commits" rows="9" cols="30"></textarea>
@@ -48,31 +49,31 @@
             <p>Tiempo de medición:</p>
             <ul>
                 <li>
-                    <input type="radio" id="ayunas" name="time" value="ayunas" >
+                    <input class="check-time" type="radio" id="ayunas" name="time" value="ayunas" >
                     <label for="ayunas">Ayunas</label>
                 </li>
                 <li>
-                    <input type="radio" id="af-Breakfast" name="time" value="af-Breakfast" >
+                    <input class="check-time" type="radio" id="af-Breakfast" name="time" value="af-Breakfast" >
                     <label for="af-Breakfast">Después de desayunar</label>
                 </li>
                 <li>
-                    <input type="radio" id="bef-lunch" name="time" value="bef-lunch" >
+                    <input class="check-time" type="radio" id="bef-lunch" name="time" value="bef-lunch" >
                     <label for="bef-lunch">Antes de almorzar</label>
                 </li>
                 <li>
-                    <input type="radio" id="af-lunch" name="time" value="af-lunch" >
+                    <input class="check-time" type="radio" id="af-lunch" name="time" value="af-lunch" >
                     <label for="af-lunch">Después de almorzar</label>
                 </li>
                 <li>
-                    <input type="radio" id="bef-dinner" name="time" value="bef-dinner" >
+                    <input class="check-time" type="radio" id="bef-dinner" name="time" value="bef-dinner" >
                     <label for="bef-dinner">Antes de cenar</label>
                 </li>
                 <li>
-                    <input type="radio" id="af-dinner" name="time" value="af-dinner" >
+                    <input class="check-time" type="radio" id="af-dinner" name="time" value="af-dinner" >
                     <label for="af-dinner">Después de cenar</label>
                 </li>
                 <li>
-                    <input type="radio" id="other" name="time" value="other" >
+                    <input class="check-time" type="radio" id="other" name="time" value="other" >
                     <label for="other">Otro</label>
                     <label for="hour">Hora:</label>
                     <input id="hour" disabled type="time">
@@ -81,14 +82,14 @@
             <input id="btn__safe" type="submit" value="Guardar">
         </form>
     </section>
-    <section class="grafic">
+    <section id="grafic">
     <!-- 
     *******************************************************************************
     Grafica
     *******************************************************************************
     -->
     </section>
-    <section class="list">
+    <section id="list">
         <button class="show-list">Ver glicemias reciences</button>
 
         <div class="register-cont">
@@ -99,7 +100,9 @@
         -->
         </div>
     </section>
+    <script src="js/manageSession.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/manageData.js"></script>
 </body>
 
 </html>
