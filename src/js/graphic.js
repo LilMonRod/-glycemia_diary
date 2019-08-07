@@ -1,6 +1,2 @@
-(function() {
-  const canvas = document.getElementById('graphicContainer')
-
-  console.log(canvas);
-
-})();
+const canvas = document.getElementById('graphicContainer');
+console.log(canvas);

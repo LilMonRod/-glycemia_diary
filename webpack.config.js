@@ -73,6 +73,6 @@ module.exports = {
     watchContentBase: true,
   },
   externals: {
-    moment: 'moment'
-  }
+    moment: 'moment',
+  },
 };

@@ -1,28 +1,14 @@
-(function() {
-	const radioList = document.getElementsByClassName('check-time');
-	const hour = document.getElementById('hour');
-	radioArr = Array.prototype.slice.call(radioList);
+import dayjs from 'dayjs';
+import 'dayjs/locale/es';
 
-	function activateHour() {
-		hour.removeAttribute('disabled');
-	}
-	function desactivateHour() {
-		hour.setAttribute('disabled', 'true');
-	}
+// Load styles.
+import '../scss/style.scss';
 
-	function checkData(event) {
-		if (event.target.id == 'other') {
-			if (event.target.checked) {
-				activateHour();
-			} 
-		} else {
-				desactivateHour();
-			}
-	}
-	for (let radio of radioArr) {
-		radio.addEventListener('change', function(event) {
-			checkData(event);
-		});
-	}
+// Register service worker.
+import './registerServiceWorker';
 
-})();
+dayjs.locale('es');
+const container = document.getElementById('container');
+const hour = document.createElement('p');
+hour.innerHTML = `Hora actual: ${dayjs().format('h:mm a')}`;
+container.appendChild(hour);

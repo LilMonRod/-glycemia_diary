@@ -14,7 +14,10 @@ style.css.map
 ehthumbs.db
 Thumbs.db
 
-
 #  cache de vscode   #
 ######################
 .vscode
+
+#    node modules    #
+######################
+node_modules/

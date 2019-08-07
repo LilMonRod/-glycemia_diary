@@ -6,13 +6,111 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Hello World!</title>
   <link rel="stylesheet" href="main.css">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>glycemia diary</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-  <div id="container">
-    <div>
+
+    <section class="init">
+        <!--
+            logo
+        -->
+        
+    </section>
+    <section id="registration" class="sign-in">
+        <form id="userForm" action="">
+            <label for="name">Nombre:</label>
+            <input id="name" type="text">
+
+            <p>Seleccione las sistema de medición:</p>
+            <ul>
+                <li>
+                    <input type="radio" id="ayunas" name="medición" value="mg/dl" >
+                    <label for="mg/dl">mg/dl</label>
+                </li>
+                <li>
+                    <input type="radio" id="af-Breakfast" name="medición" value="mmol/l" >
+                    <label for="mmol/l">mmol/l</label>
+                </li>
+            </ul>
+
+            <input id="btn__log" type="submit" value="Guardar">
+        </form>
+    </section>
+    <section id="magageGlicemya">
+        <button class="add-new">Agregar nueva glicemia</button>
+
+        <form id="newMedition" action="" aria-expanded="false" id="newform-container">
+            <h2>Nuevo registro glicemia</h2>
+            <label for="glycemi">Ultima medición:</label>
+            <input id="glycemi" type="number"><span id="units"></span>
+
+            <label for="commits">Observaciones:</label>
+            <textarea id="commits" rows="9" cols="30"></textarea>
+            
+            <p>Tiempo de medición:</p>
+            <ul>
+                <li>
+                    <input class="check-time" type="radio" id="ayunas" name="time" value="ayunas" >
+                    <label for="ayunas">Ayunas</label>
+                </li>
+                <li>
+                    <input class="check-time" type="radio" id="af-Breakfast" name="time" value="af-Breakfast" >
+                    <label for="af-Breakfast">Después de desayunar</label>
+                </li>
+                <li>
+                    <input class="check-time" type="radio" id="bef-lunch" name="time" value="bef-lunch" >
+                    <label for="bef-lunch">Antes de almorzar</label>
+                </li>
+                <li>
+                    <input class="check-time" type="radio" id="af-lunch" name="time" value="af-lunch" >
+                    <label for="af-lunch">Después de almorzar</label>
+                </li>
+                <li>
+                    <input class="check-time" type="radio" id="bef-dinner" name="time" value="bef-dinner" >
+                    <label for="bef-dinner">Antes de cenar</label>
+                </li>
+                <li>
+                    <input class="check-time" type="radio" id="af-dinner" name="time" value="af-dinner" >
+                    <label for="af-dinner">Después de cenar</label>
+                </li>
+                <li>
+                    <input class="check-time" type="radio" id="other" name="time" value="other" >
+                    <label for="other">Otro</label>
+                    <label for="hour">Hora:</label>
+                    <input id="hour" disabled type="time">
+                </li>
+            </ul>
+            <input id="btn__safe" type="submit" value="Guardar">
+        </form>
+    </section>
+    <section id="grafic">
       <canvas id="graphicContainer"></canvas>
-    </div>
-  </div>
-  <script src="main.js"></script>
+    <!-- 
+    *******************************************************************************
+    Grafica
+    *******************************************************************************
+    -->
+    </section>
+    <section id="list">
+        <button class="show-list">Ver glicemias reciences</button>
+
+        <div class="register-cont">
+        <!-- 
+        *******************************************************************************
+        Registro completo
+        *******************************************************************************
+        -->
+        </div>
+    </section>
+    
+    <script src="main.js"></script>
+    <script src="js/manageSession.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/manageData.js"></script>
 </body>
 </html>
