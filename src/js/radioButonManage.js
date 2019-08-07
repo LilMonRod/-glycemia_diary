@@ -1,6 +1,5 @@
-const radioList = document.getElementsByClassName('check-time');
 const hour = document.getElementById('hour');
-const radioArr = Array.prototype.slice.call(radioList);
+const radioArr = [...document.getElementsByClassName('check-time')];
 
 function activateHour() {
   hour.removeAttribute('disabled');
@@ -12,14 +11,13 @@ function desactivateHour() {
 function checkData(event) {
   if (event.target.id === 'other') {
     if (event.target.checked) {
-			activateHour();
-		} 
-	} else {
-			desactivateHour();
-		}
+      activateHour();
+    }
+  } else {
+    desactivateHour();
+  }
 }
-for (let radio of radioArr) {
-	radio.addEventListener('change', function(event) {
-		checkData(event);
-	});
-}
+
+radioArr.forEach((radio) => {
+  radio.addEventListener('change', checkData);
+});

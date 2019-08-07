@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Hello World!</title>
-  <link rel="stylesheet" href="main.css">
 
-  <head>
+<head>
     <meta charset="UTF-8">
-    <title>glycemia diary</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+    <meta charset="UTF-8">
+    <title>Glycemia diary</title>
 </head>
 
 <body>
-
+    <header>
+        <h1>Glycemia diary</h1>
+    </header>
     <section class="init">
         <!--
             logo
         -->
-        
+
     </section>
     <section id="registration" class="sign-in">
         <form id="userForm" action="">
@@ -29,11 +28,11 @@
             <p>Seleccione las sistema de medición:</p>
             <ul>
                 <li>
-                    <input type="radio" id="ayunas" name="medición" value="mg/dl" >
+                    <input type="radio" id="ayunas" name="medición" value="mg/dl">
                     <label for="mg/dl">mg/dl</label>
                 </li>
                 <li>
-                    <input type="radio" id="af-Breakfast" name="medición" value="mmol/l" >
+                    <input type="radio" id="af-Breakfast" name="medición" value="mmol/l">
                     <label for="mmol/l">mmol/l</label>
                 </li>
             </ul>
@@ -49,37 +48,39 @@
             <label for="glycemi">Ultima medición:</label>
             <input id="glycemi" type="number"><span id="units"></span>
 
+            </br>
+
             <label for="commits">Observaciones:</label>
             <textarea id="commits" rows="9" cols="30"></textarea>
-            
+
             <p>Tiempo de medición:</p>
             <ul>
                 <li>
-                    <input class="check-time" type="radio" id="ayunas" name="time" value="ayunas" >
+                    <input class="check-time" type="radio" id="ayunas" name="time" value="ayunas">
                     <label for="ayunas">Ayunas</label>
                 </li>
                 <li>
-                    <input class="check-time" type="radio" id="af-Breakfast" name="time" value="af-Breakfast" >
+                    <input class="check-time" type="radio" id="af-Breakfast" name="time" value="af-Breakfast">
                     <label for="af-Breakfast">Después de desayunar</label>
                 </li>
                 <li>
-                    <input class="check-time" type="radio" id="bef-lunch" name="time" value="bef-lunch" >
+                    <input class="check-time" type="radio" id="bef-lunch" name="time" value="bef-lunch">
                     <label for="bef-lunch">Antes de almorzar</label>
                 </li>
                 <li>
-                    <input class="check-time" type="radio" id="af-lunch" name="time" value="af-lunch" >
+                    <input class="check-time" type="radio" id="af-lunch" name="time" value="af-lunch">
                     <label for="af-lunch">Después de almorzar</label>
                 </li>
                 <li>
-                    <input class="check-time" type="radio" id="bef-dinner" name="time" value="bef-dinner" >
+                    <input class="check-time" type="radio" id="bef-dinner" name="time" value="bef-dinner">
                     <label for="bef-dinner">Antes de cenar</label>
                 </li>
                 <li>
-                    <input class="check-time" type="radio" id="af-dinner" name="time" value="af-dinner" >
+                    <input class="check-time" type="radio" id="af-dinner" name="time" value="af-dinner">
                     <label for="af-dinner">Después de cenar</label>
                 </li>
                 <li>
-                    <input class="check-time" type="radio" id="other" name="time" value="other" >
+                    <input class="check-time" type="radio" id="other" name="time" value="other">
                     <label for="other">Otro</label>
                     <label for="hour">Hora:</label>
                     <input id="hour" disabled type="time">
@@ -89,8 +90,8 @@
         </form>
     </section>
     <section id="grafic">
-      <canvas id="graphicContainer"></canvas>
-    <!-- 
+        <canvas id="graphicContainer"></canvas>
+        <!-- 
     *******************************************************************************
     Grafica
     *******************************************************************************
@@ -100,17 +101,18 @@
         <button class="show-list">Ver glicemias reciences</button>
 
         <div class="register-cont">
-        <!-- 
+            <!-- 
         *******************************************************************************
         Registro completo
         *******************************************************************************
         -->
         </div>
     </section>
-    
+
     <script src="main.js"></script>
     <script src="js/manageSession.js"></script>
     <script src="js/script.js"></script>
     <script src="js/manageData.js"></script>
 </body>
+
 </html>
