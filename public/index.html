@@ -89,13 +89,9 @@
             <input id="btn__safe" type="submit" value="Guardar">
         </form>
     </section>
-    <section id="grafic">
-        <canvas id="graphicContainer"></canvas>
-        <!-- 
-    *******************************************************************************
-    Grafica
-    *******************************************************************************
-    -->
+    <!--Grafica -->
+    <section class="graphic__container" id="graphic-cont">
+        <canvas id="graphic" height="50" width="100"></canvas>
     </section>
     <section id="list">
         <button class="show-list">Ver glicemias reciences</button>
@@ -109,10 +105,8 @@
         </div>
     </section>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
     <script src="main.js"></script>
-    <script src="js/manageSession.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/manageData.js"></script>
 </body>
 
 </html>

@@ -6,7 +6,7 @@ const list = {};
 const newForm = document.getElementById('newMedition');
 
 function printUserPreferences(data) {
-  console.log(data.tipoMedicion);
+  // console.log(data.tipoMedicion);
   const units = document.getElementById('units');
   units.innerText = data.tipoMedicion;
 }
@@ -17,28 +17,34 @@ function saveData(data, place) {
     const id = `${date.getDate()}-${date.getMonth()}-${date.getFullYear()}-${counter}`;
     list[id] = data;
 
-    console.log(list);
+    // console.log(list);
     localStorage.setItem('data', JSON.stringify(list));
-    console.log(JSON.stringify(list));
+    // console.log(JSON.stringify(list));
     counter += 1;
+    /**
+     * Lamando ala función cada vez que
+     * se haga una nueva
+     * setMeditions();
+     */
+     
   } else if (place === 'user') {
     localStorage.setItem('dataUser', JSON.stringify(data));
   }
 }
 
 function getUserData(data) {
-  console.log('datos del usuario');
+  // console.log('datos del usuario');
   const userData = {};
   userData.name = data[0].value;
   userData.tipoMedicion = data[1].value;
-  console.log(userData);
+  // console.log(userData);
   saveData(userData, 'user');
   validateSession();
-  console.log('funcionó la expoertacón');
+  // console.log('funcionó la expoertacón');
 }
 
 function getMeditionData(data) {
-  console.log('datos de medición obtenidos');
+  // console.log('datos de medición obtenidos');
   const formData = {};
   formData.medicion = data[0].value;
   formData.observaciones = data[1].value;
@@ -78,10 +84,10 @@ function getMeditionData(data) {
 function saveNewData(event) {
   event.preventDefault();
   if (event.target.id === 'userForm') {
-    console.log('datos de nuevo usuario');
+    // console.log('datos de nuevo usuario');
     getUserData(event.target);
   } else if (event.target.id === 'newMedition') {
-    console.log('datos de nueva medicion');
+    // console.log('datos de nueva medicion');
     getMeditionData(event.target);
   }
   event.target.reset();
@@ -90,11 +96,11 @@ function saveNewData(event) {
 function validateData() {
   const data = localStorage.getItem('data');
   if (data !== null) {
-    console.log('hay data en localstortage:', data);
+    // console.log('hay data en localstortage:', data);
   }
   let user = localStorage.getItem('dataUser');
   if (user !== null) {
-    console.log('hay data en stortage:', user);
+    // console.log('hay data en stortage:', user);
     user = JSON.parse(user);
     printUserPreferences(user);
   }

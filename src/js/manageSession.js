@@ -1,6 +1,6 @@
 const magageGlicemya = document.getElementById('magageGlicemya');
 const registration = document.getElementById('registration');
-const grafic = document.getElementById('grafic');
+const grafic = document.getElementById('graphic-cont');
 const list = document.getElementById('list');
 
 function hideLog() {
