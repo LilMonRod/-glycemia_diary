@@ -12,3 +12,6 @@ import './manageData';
 
 // manage radio button
 import './radioButonManage';
+
+// Import graphic code
+import './graphic';
