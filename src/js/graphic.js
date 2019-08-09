@@ -47,7 +47,13 @@ btnSave.addEventListener('click', (event) => {
 function setMeditions() {
   graphicMeditions = [];
   graphicTime = [];
-  const data = JSON.parse(localStorage.getItem('data'));
+  let data = [];
+
+  if (localStorage.getItem('data')) {
+    data = JSON.parse(localStorage.getItem('data'));
+  } else {
+    data = [0, 0];
+  }
   // console.log(data);
   const keys = Object.keys(data);
   keys.map((key) => {
@@ -55,19 +61,12 @@ function setMeditions() {
     graphicTime.push(data[key].time);
     return true;
   });
-  graphicMeditions.forEach(element => {
-    console.log(element);
-  });
-  console.log(graphicMeditions.length + '- Medición');
-  console.log(graphicTime + '- Tiempo')
-  // console.log(graphicControler);
-  // graphicControler.config.data.labels.push(graphicTime.length - 1);
-  // console.log(graphicControler.config.data.labels);
-  // console.log(graphicControler.config.data.datasets);
-  // graphicControler.config.data.datasets[0].data.push(parseInt(graphicMeditions[graphicMeditions.length - 1]));
-  // console.log(graphicMeditions);
-  // console.log(graphicTime);
 
+  const timeController = graphicControler.config.data.datasets[0].data;
+  timeController.push(parseInt(graphicTime[graphicTime.length - 1]));
+
+  const meditionController = graphicControler.config.data.labels;
+  meditionController.push(graphicMeditions[graphicMeditions.length - 1]);
 }
 
 setMeditions();

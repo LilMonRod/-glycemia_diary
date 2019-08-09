@@ -91,7 +91,6 @@ function saveNewData(event) {
     // console.log('datos de nueva medicion');
     getMeditionData(event.target);
   }
-  
   event.target.reset();
 
   location.reload(); /*eslint-disable-line*/

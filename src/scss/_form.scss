@@ -1,3 +1,7 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
 h2 {
     margin-left: 30px;
     margin-top: 18px;
@@ -21,9 +25,9 @@ li{
     padding: 10px 0;
 }
 
-input{
-    background-color: gainsboro;
-    border: solid 2px gray;
+input, textarea{
+    background-color: #2e98d57a;
+    border: solid 2px #2e98d5;
 }
 
 .none {
