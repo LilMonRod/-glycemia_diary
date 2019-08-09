@@ -4,7 +4,7 @@
 
 * `npm install`
 
-* `npm install chart.js --save`
+* `npm install chart.js --save -dev`
 
 ## NPM Commands
 
