@@ -1,8 +1,7 @@
-import validateSession from './manageSession';
+import validateRegister from './manageSession';
 
 const userForm = document.getElementById('userForm');
-let counter = 1;
-const list = {};
+let list = {};
 const newForm = document.getElementById('newMedition');
 
 function printUserPreferences(data) {
@@ -12,21 +11,23 @@ function printUserPreferences(data) {
 }
 
 function saveData(data, place) {
+  list = {};
+  list = JSON.parse(localStorage.getItem('data'));
+
   if (place === 'form') {
     const date = new Date();
-    const id = `${date.getDate()}-${date.getMonth()}-${date.getFullYear()}-${counter}`;
+    const id = `${date.getDate()}-${date.getMonth()}-${date.getFullYear()}-${date.getMilliseconds()}`;
     list[id] = data;
 
     // console.log(list);
     localStorage.setItem('data', JSON.stringify(list));
     // console.log(JSON.stringify(list));
-    counter += 1;
+
     /**
      * Lamando ala función cada vez que
      * se haga una nueva
      * setMeditions();
      */
-     
   } else if (place === 'user') {
     localStorage.setItem('dataUser', JSON.stringify(data));
   }
@@ -39,7 +40,7 @@ function getUserData(data) {
   userData.tipoMedicion = data[1].value;
   // console.log(userData);
   saveData(userData, 'user');
-  validateSession();
+  validateRegister();
   // console.log('funcionó la expoertacón');
 }
 
@@ -90,7 +91,10 @@ function saveNewData(event) {
     // console.log('datos de nueva medicion');
     getMeditionData(event.target);
   }
+  
   event.target.reset();
+
+  location.reload(); /*eslint-disable-line*/
 }
 
 function validateData() {

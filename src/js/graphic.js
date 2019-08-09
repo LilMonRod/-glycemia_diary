@@ -1,17 +1,19 @@
 const Chart = require('chart.js');
-const graphic = document.getElementById('graphic');
 
-console.log(Chart + 'Hodi');
+const btnSave = document.getElementById('btn__safe');
+const graphic = document.getElementById('graphic');
+let graphicMeditions;
+let graphicTime;
 
 const graphicControler = new Chart(graphic, {
   type: 'line',
   data: {
-    labels: ['10:00', '11:00', '12:00', '01:00', '02:00', '03:00'],
+    labels: ['', 'Ayunas', 'Antes de desayunar'],
     datasets: [
       {
-        label: 'Glycemis',
+        label: 'Nivel de azucar',
         fill: 0,
-        lineTension: 0.1,
+        lineTension: 0.4,
         backgroundColor: 'rgba(75,192,192,0.4)',
         borderColor: 'rgba(75,192,192,1)',
         borderCapStyle: 'butt',
@@ -27,24 +29,45 @@ const graphicControler = new Chart(graphic, {
         pointHoverBorderWidth: 2,
         pointRadius: 1,
         pointHitRadius: 10,
-        data: [65, 50, 80, 75, 45, 90],
+        data: [80, 75, 92],
       },
     ],
   },
-  options: { 
-
-   },
 });
 
-console.log(graphicControler);
-
-const data = localStorage.getItem('data');
-console.log(data);
+btnSave.addEventListener('click', (event) => {
+  event.preventDefault();
+  const medida = document.getElementById('glycemi').value;
+  console.log(medida);
+});
 
 /**
  * Funcion que guarda los datos nuevos
  */
-
 function setMeditions() {
-  
+  graphicMeditions = [];
+  graphicTime = [];
+  const data = JSON.parse(localStorage.getItem('data'));
+  // console.log(data);
+  const keys = Object.keys(data);
+  keys.map((key) => {
+    graphicMeditions.push(data[key].medicion);
+    graphicTime.push(data[key].time);
+    return true;
+  });
+  graphicMeditions.forEach(element => {
+    console.log(element);
+  });
+  console.log(graphicMeditions.length + '- Medición');
+  console.log(graphicTime + '- Tiempo')
+  // console.log(graphicControler);
+  // graphicControler.config.data.labels.push(graphicTime.length - 1);
+  // console.log(graphicControler.config.data.labels);
+  // console.log(graphicControler.config.data.datasets);
+  // graphicControler.config.data.datasets[0].data.push(parseInt(graphicMeditions[graphicMeditions.length - 1]));
+  // console.log(graphicMeditions);
+  // console.log(graphicTime);
+
 }
+
+setMeditions();

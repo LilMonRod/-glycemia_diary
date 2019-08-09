@@ -16,6 +16,18 @@ button {
     border: 2px solid #1883ba;
 }
 
+li{
+    list-style: none;
+    padding: 10px 0;
+}
+
+input{
+    background-color: gainsboro;
+    border: solid 2px gray;
+}
+
 .none {
     visibility: hidden;
 }
+
+

@@ -41,43 +41,34 @@
         </form>
     </section>
     <section id="magageGlicemya">
-        <button class="add-new">Agregar nueva glicemia</button>
+        <button class="add-new" id="newGlycemy">Agregar nueva glicemia</button>
 
-        <form id="newMedition" action="" aria-expanded="false" id="newform-container">
+        <form id="newMedition" action="POST" aria-expanded="false" id="newform-container" class="form_contain">
             <h2>Nuevo registro glicemia</h2>
             <label for="glycemi">Ultima medición:</label>
             <input id="glycemi" type="number"><span id="units"></span>
-
-            </br>
-
-            <label for="commits">Observaciones:</label>
-            <textarea id="commits" rows="9" cols="30"></textarea>
-
-            <p>Tiempo de medición:</p>
+            
+            <h3>Tiempo de medición:</h3>
             <ul>
                 <li>
-                    <input class="check-time" type="radio" id="ayunas" name="time" value="ayunas">
-                    <label for="ayunas">Ayunas</label>
+                    <label for="ayunas">
+                        <input class="check-time" type="radio" id="ayunas" name="time" value="ayunas">Ayunas
+                    </label>
                 </li>
                 <li>
-                    <input class="check-time" type="radio" id="af-Breakfast" name="time" value="af-Breakfast">
-                    <label for="af-Breakfast">Después de desayunar</label>
+                    <label for="af-Breakfast"><input class="check-time" type="radio" id="af-Breakfast" name="time" value="af-Breakfast">Después de desayunar</label>
                 </li>
                 <li>
-                    <input class="check-time" type="radio" id="bef-lunch" name="time" value="bef-lunch">
-                    <label for="bef-lunch">Antes de almorzar</label>
+                    <label for="bef-lunch"><input class="check-time" type="radio" id="bef-lunch" name="time" value="bef-lunch">Antes de almorzar</label>
                 </li>
                 <li>
-                    <input class="check-time" type="radio" id="af-lunch" name="time" value="af-lunch">
-                    <label for="af-lunch">Después de almorzar</label>
+                    <label for="af-lunch"><input class="check-time" type="radio" id="af-lunch" name="time" value="af-lunch">Después de almorzar</label>
                 </li>
                 <li>
-                    <input class="check-time" type="radio" id="bef-dinner" name="time" value="bef-dinner">
-                    <label for="bef-dinner">Antes de cenar</label>
+                    <label for="bef-dinner"><input class="check-time" type="radio" id="bef-dinner" name="time" value="bef-dinner">Antes de cenar</label>
                 </li>
                 <li>
-                    <input class="check-time" type="radio" id="af-dinner" name="time" value="af-dinner">
-                    <label for="af-dinner">Después de cenar</label>
+                    <label for="af-dinner"><input class="check-time" type="radio" id="af-dinner" name="time" value="af-dinner">Después de cenar</label>
                 </li>
                 <li>
                     <input class="check-time" type="radio" id="other" name="time" value="other">
@@ -86,6 +77,9 @@
                     <input id="hour" disabled type="time">
                 </li>
             </ul>
+            <label for="commits">Observaciones:
+                <textarea id="commits" rows="9" cols="30"></textarea>
+            </label>
             <input id="btn__safe" type="submit" value="Guardar">
         </form>
     </section>
@@ -94,7 +88,7 @@
         <canvas id="graphic" height="50" width="100"></canvas>
     </section>
     <section id="list">
-        <button class="show-list">Ver glicemias reciences</button>
+        <button class="show-list">Ver glicemias recientes</button>
 
         <div class="register-cont">
             <!-- 
