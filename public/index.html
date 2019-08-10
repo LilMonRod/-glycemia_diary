@@ -14,13 +14,15 @@
 </head>
 
 <body>
-    <header>
+    <header class="container">
+        <img src="img/icons/icon-72x72.png" alt="logo" srcset="">
         <h1>Glycemia diary</h1>
     </header>
-    <section class="init">
+    <section class="init container">
         <!--
             logo
         -->
+        
 
     </section>
     <section id="registration" class="sign-in">
@@ -43,15 +45,13 @@
             <input id="btn__log" type="submit" value="Guardar">
         </form>
     </section>
-    <section id="magageGlicemya">
-        <button class="add-new" id="newGlycemy">Agregar nueva glicemia</button>
+    <section id="magageGlicemya" class="container">
 
         <form id="newMedition" action="POST" aria-expanded="false" id="newform-container" class="form_contain">
             <h2>Nuevo registro glicemia</h2>
             <label for="glycemi">Ultima medición:</label>
             <input id="glycemi" type="number"><span id="units"></span>
-            
-            <h3>Tiempo de medición:</h3>
+            <h3 class="title">Tiempo de medición:</h3>            
             <ul>
                 <li>
                     <label for="ayunas">
@@ -76,30 +76,22 @@
                 <li>
                     <input class="check-time" type="radio" id="other" name="time" value="other">
                     <label for="other">Otro</label>
-                    <label for="hour">Hora:</label>
+                    <label class="tag" for="hour">Hora:</label>
                     <input id="hour" disabled type="time">
                 </li>
             </ul>
-            <label for="commits">Observaciones:
+            <label for="commits"> <h3 class="title"> Observaciones:</h3>
                 <textarea id="commits" rows="9" cols="30"></textarea>
             </label>
-            <input id="btn__safe" type="submit" value="Guardar">
+            <input id="btn__safe" class="form_btn" type="submit" value="Guardar">
         </form>
     </section>
     <!--Grafica -->
-    <section class="graphic__container" id="graphic-cont">
-        <canvas id="graphic" height="50" width="100"></canvas>
+    <section class="graphic__container container" id="graphic-cont">
+        <canvas id="graphic" height="40vh" width="80vw"></canvas>
     </section>
-    <section id="list">
-        <button class="show-list">Ver glicemias recientes</button>
-
-        <div class="register-cont">
-            <!-- 
-        *******************************************************************************
-        Registro completo
-        *******************************************************************************
-        -->
-        </div>
+    <section id="list" class="container">
+        
     </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>

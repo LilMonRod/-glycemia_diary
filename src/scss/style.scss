@@ -6,7 +6,9 @@
     content: "";
     clear: both;
 }
-  
+
+@import 'generals.scss';
+
 @import 'form.scss';
 
 @import 'graphic.scss';
