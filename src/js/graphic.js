@@ -54,7 +54,6 @@ function setMeditions() {
   } else {
     data = [0, 0];
   }
-  // console.log(data);
   const keys = Object.keys(data);
   keys.map((key) => {
     graphicMeditions.push(data[key].medicion);
@@ -63,6 +62,7 @@ function setMeditions() {
   });
 
   const timeController = graphicControler.config.data.datasets[0].data;
+  // eslint-disable-next-line radix
   timeController.push(parseInt(graphicTime[graphicTime.length - 1]));
 
   const meditionController = graphicControler.config.data.labels;

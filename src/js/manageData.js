@@ -5,7 +5,7 @@ let list = {};
 const newForm = document.getElementById('newMedition');
 
 function printUserPreferences(data) {
-  // console.log(data.tipoMedicion);
+  // data es tipo de Medicion
   const units = document.getElementById('units');
   units.innerText = data.tipoMedicion;
 }
@@ -19,7 +19,7 @@ function saveData(data, place) {
     const id = `${date.getDate()}-${date.getMonth()}-${date.getFullYear()}-${date.getMilliseconds()}`;
     list[id] = data;
 
-    // console.log(list);
+    // list completa
     localStorage.setItem('data', JSON.stringify(list));
     // console.log(JSON.stringify(list));
 
@@ -34,18 +34,17 @@ function saveData(data, place) {
 }
 
 function getUserData(data) {
-  // console.log('datos del usuario');
+  // datos del usuario
   const userData = {};
   userData.name = data[0].value;
   userData.tipoMedicion = data[1].value;
-  // console.log(userData);
+  // userData
   saveData(userData, 'user');
   validateRegister();
-  // console.log('funcionó la expoertacón');
 }
 
 function getMeditionData(data) {
-  // console.log('datos de medición obtenidos');
+  // datos de medición obtenidos
   const formData = {};
   formData.medicion = data[0].value;
   formData.observaciones = data[1].value;
@@ -85,10 +84,10 @@ function getMeditionData(data) {
 function saveNewData(event) {
   event.preventDefault();
   if (event.target.id === 'userForm') {
-    // console.log('datos de nuevo usuario');
+    // datos de nuevo usuario
     getUserData(event.target);
   } else if (event.target.id === 'newMedition') {
-    // console.log('datos de nueva medicion');
+    // datos de nueva medicion
     getMeditionData(event.target);
   }
   event.target.reset();
@@ -98,12 +97,8 @@ function saveNewData(event) {
 
 function validateData() {
   const data = localStorage.getItem('data');
-  if (data !== null) {
-    // console.log('hay data en localstortage:', data);
-  }
   let user = localStorage.getItem('dataUser');
   if (user !== null) {
-    // console.log('hay data en stortage:', user);
     user = JSON.parse(user);
     printUserPreferences(user);
   }
