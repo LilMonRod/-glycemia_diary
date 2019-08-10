@@ -4,7 +4,7 @@ const grafic = document.getElementById('graphic-cont');
 const list = document.getElementById('list');
 
 function hideLog() {
-  // console.log('escondiendo log');
+  // escondiendo log
 
   registration.classList.add('none');
   magageGlicemya.classList.remove('none');
@@ -12,7 +12,7 @@ function hideLog() {
   list.classList.remove('none');
 }
 function showLog() {
-  // console.log('mostrando log');
+  // mostrando log
   registration.classList.remove('none');
   magageGlicemya.classList.add('none');
   grafic.classList.add('none');
@@ -22,10 +22,10 @@ function showLog() {
 function validateRegister() {
   const user = localStorage.getItem('dataUser');
   if (user == null) {
-    // console.log('no hay data en stortage: first session');
+    // no hay data en stortage: first session
     showLog();
   } else {
-    // console.log('hay data');
+    // hay data
     hideLog();
   }
 }
