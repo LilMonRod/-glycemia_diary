@@ -1,6 +1,10 @@
 {
   "short_name": "Glycemi",
   "name": "Glycemi Diary",
+  "theme_color": "#2196f3",
+  "background_color": "#2196f3",
+  "display": "browser",
+  "Scope": "/",
   "icons": [
     {
       "src": "img/icons/icon-72x72.png",
